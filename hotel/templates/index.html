@@ -1,4 +1,39 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Hii</h1>
+
+<form>
+    <p>Please select Name:</p>
+    <input type="text" placeholder="Name" name="name1">
+    <br>
+    <p>Please select your favorite Web language:</p>
+      <input type="radio" id="html" name="fav_language" value="HTML">
+      <label for="html">HTML</label><br>
+      <input type="radio" id="css" name="fav_language" value="CSS">
+      <label for="css">CSS</label><br>
+      <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+      <label for="javascript">JavaScript</label>
+    <br>
+    <p>Please select Range:</p>
+    <input name="range" type="range" min="0" max="7000">
+    <br>
+    <label for="cars">Choose a car:</label>
+
+    <select name="cars" id="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+    </select>
+    <button type="submit">Submit</button>
+</form>
+
+
+{% for hotel in hotels %}
+<hr>
+<p>{{hotel.hotel_name}}</p>
+<p>{{hotel.hotel_description}}</p>
+<p>{{hotel.street}},{{hotel.city}},{{hotel.division}},{{hotel.country}} : {{hotel.zip_code}}</p>
+{% endfor %}
+
 {% endblock %}

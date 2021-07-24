@@ -16,6 +16,9 @@ class Hotels(models.Model):
     city = models.CharField(max_length=15)
     street = models.CharField(max_length=50)
 
+    def __str__(self):
+        return self.hotel_name + " - "+ self.city
+
 
 class Hotel_Rooms(models.Model):
     hotel = models.ForeignKey(Hotels, on_delete=CASCADE)
