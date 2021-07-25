@@ -6,25 +6,17 @@
     <p>Please select Name:</p>
     <input type="text" placeholder="Name" name="name1">
     <br>
-    <p>Please select your favorite Web language:</p>
-      <input type="radio" id="html" name="fav_language" value="HTML">
-      <label for="html">HTML</label><br>
-      <input type="radio" id="css" name="fav_language" value="CSS">
-      <label for="css">CSS</label><br>
-      <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-      <label for="javascript">JavaScript</label>
+    <p>Facilities:</p>
+    {% for facilitie in facilities %}
+      <input type="checkbox" name="fav_language" value="{{facilitie.title}}">
+            <label for="{{facilitie.title}}">{{facilitie.title}}</label><br>
+
+    {% endfor %}
     <br>
     <p>Please select Range:</p>
     <input name="range" type="range" min="0" max="7000">
     <br>
-    <label for="cars">Choose a car:</label>
-
-    <select name="cars" id="cars">
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="audi">Audi</option>
-    </select>
+   
     <button type="submit">Submit</button>
 </form>
 
